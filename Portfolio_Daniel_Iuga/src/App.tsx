@@ -68,7 +68,9 @@ const App = () => {
                 <span className="text-blue-600">*</span> UI/UX DESIGN
               </p>
               <div className="mt-8 space-x-4">
-                <button className="bg-black text-white px-6 py-2">Got a project?</button>
+                <button className="bg-black text-white px-6 py-2">
+                  <a href="/CV Dani Iuga.pdf" download className="text-white">Download CV</a>
+                </button>
                 <button
                   className="border px-4 py-2 border-black font-semibold bg-white"
                   onClick={() => setShowModal(true)}
