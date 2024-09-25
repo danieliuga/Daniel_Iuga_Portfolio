@@ -23,13 +23,19 @@ import { useState } from 'react';
 const App = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const handleCloseModal = (e: any) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      setShowModal(false);
+    }
+  };
+
   return (
     <>
       <div className='bg-gray-200'>
 
         <div className='container mx-auto p-4'>
-          <div className='grid grid-cols-[2fr_2fr_1fr] justify-between items-center py-4'>
-            <div className='flex flex-row justify-start items-center'>
+          <div className='grid grid-rows-[1fr_1fr_1fr] md:grid-cols-[2fr_2fr_1fr] justify-center md:justify-between items-center py-4 gap-2 md:gap-0'>
+            <div className='flex flex-row justify-center md:justify-start items-center'>
               <div className='w-10'>
                 <img
                   src={letra}
@@ -45,7 +51,7 @@ const App = () => {
               <a href="#about" className="text-gray-800">About</a>
               <a href="#contact" className="text-gray-800">Contact</a>
             </nav>
-            <div className='flex justify-end items-center mr-5'>
+            <div className='flex justify-center md:justify-end items-center mr-5'>
               <a
                 href='mailto:daniel04.iuga@gmail.com'
                 className="border px-4 py-2 border-black font-semibold bg-white"
@@ -56,11 +62,11 @@ const App = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-[1fr_1fr] justify-center items-center'>
-          <div className='flex justify-center mt-4'>
+        <div className='grid grid-rows-[1fr_1fr] md:grid-rows-1 md:grid-cols-[1fr_1fr] justify-center items-center'>
+          <div className='flex justify-center text-center lg:text-left mt-4'>
             <div className='max-w-lg'>
-              <p className='text-5xl font-bold'>Hi, I'm Daniel Iuga</p>
-              <p className="text-4xl font-semibold mt-4">
+              <p className='text-5xl md:text-4xl lg:text-5xl font-bold'>Hi, I'm Daniel Iuga</p>
+              <p className="text-4xl md:text-3xl lg:text-4xl font-semibold mt-4">
                 A FRONTEND <span className="text-blue-600">*</span> DEVELOPER BASED IN BARCELONA.
               </p>
               <p className="text-lg mt-6">
@@ -78,8 +84,11 @@ const App = () => {
                   Message Me
                 </button>
                 {showModal && (
-                  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                    <div className="bg-white p-8 rounded-lg">
+                  <div
+                    className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+                    onClick={handleCloseModal}
+                  >
+                    <div className="bg-white p-8 rounded-lg w-96" onClick={(e) => e.stopPropagation()}>
                       <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
                       <form action="https://formspree.io/f/mldryvvl" method="POST">
                         <div className="mb-4">
@@ -119,7 +128,7 @@ const App = () => {
         </div>
 
         <div className="mt-16 bg-black text-white py-4">
-          <ul className="flex justify-between space-x-4 text-center mx-2">
+          <ul className="flex flex-wrap justify-center md:flex-nowrap md:justify-between space-x-4 text-center mx-2">
             <li>HTML/CSS</li>
             <li>JAVASCRIPT</li>
             <li>REACT</li>
@@ -143,7 +152,7 @@ const App = () => {
             <p className="text-lg text-gray-600 mt-2 font-semibold">Technologies & Tools</p>
           </div>
 
-          <div className='grid grid-cols-3 gap-8 mt-10 mx-auto'>
+          <div className='flex flex-col md:grid md:grid-cols-3 gap-8 mt-10 mx-auto'>
 
             <SkillItem
               imgSrc={html}
@@ -222,11 +231,11 @@ const App = () => {
               link="https://data-format-converter.vercel.app/"
             />
 
-            <div className='grid grid-cols-[1fr_1fr] justify-center items-center mt-10'>
-              <div className='flex flex-col justify-start items-end mr-10'>
+            <div className='grid grid-rows-2 md:grid-rows-1 md:grid-cols-[1fr_1fr] justify-center items-center mt-10'>
+              <div className='flex flex-col justify-center md:justify-start items-center md:items-end md:mr-10'>
                 <div className='bg-blue-500 text-white font-semibold py-2 w-40'>PROJECT</div>
                 <p className='py-2 mt-2 text-2xl font-bold'>Financial Calculator</p>
-                <p className='py-2 flex text-right'>A calculator that helps users compute financial metrics such as loan amortization, interest rates, and payments, created using React and hooks.</p>
+                <p className='py-2 flex text-center md:text-right'>A calculator that helps users compute financial metrics such as loan amortization, interest rates, and payments, created using React and hooks.</p>
                 <a
                   href="https://financial-calculator-rho.vercel.app/"
                   target="_blank"
@@ -236,7 +245,7 @@ const App = () => {
                   See More
                 </a>
               </div>
-              <div className='flex justify-start'>
+              <div className='flex justify-center md:justify-start'>
                 <div className='w-2/3 ml-5'>
                   <img
                     src={interes}
@@ -269,8 +278,8 @@ const App = () => {
             <h1 className="text-5xl font-bold">ABOUT ME</h1>
           </div>
           <div className='flex flex-col'>
-            <div className='grid grid-cols-[2fr_3fr]'>
-              <div className='flex flex-col justify-center items-center ml-52'>
+            <div className='grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-[2fr_3fr] mt-10 lg:mt-0'>
+              <div className='flex flex-col justify-center items-center lg:ml-52'>
                 <p className="text-2xl font-semibold">
                   DANIEL <span className="text-blue-600 text-2xl">*</span> IUGA
                 </p>
@@ -287,41 +296,41 @@ const App = () => {
                   />
                 </div>
               </div>
-              <div className='flex flex-col px-36 py-20'>
+              <div className='flex flex-col md:py-44 lg:py-20'>
                 <p className='text-2xl font-bold'>Aspiring to create impactful web applications through clean code, responsive design, and a user-centric approach.</p>
                 <p className='pt-6'>I specialize in front-end development using HTML, CSS, and JavaScript, with a growing proficiency in React and modern web technologies. I'm always excited to collaborate on meaningful projects, applying my skills to real-world problems.</p>
                 <div className='grid grid-cols-[1fr_1fr_1fr] pt-6'>
                   <div className='flex justify-center items-center'>
-                    <div className='flex flex-col gap-2 justify-start items-start'>
+                    <div className='flex flex-col gap-2 justify-start items-center md:items-start'>
                       <p className='text-blue-500 font-semibold'>BORN IN</p>
-                      <p className='font-bold text-xl'>BARCELONA</p>
+                      <p className='font-bold text-sm md:text-xl'>BARCELONA</p>
                     </div>
                   </div>
                   <div className='flex justify-center items-center'>
-                    <div className='flex flex-col gap-2 justify-start items-start'>
+                    <div className='flex flex-col gap-2 justify-start items-center md:items-start'>
                       <p className='text-blue-500 font-semibold'>EXPERIENCE</p>
-                      <p className='font-bold text-xl'>1+ Years</p>
+                      <p className='font-bold text-sm md:text-xl'>1+ Years</p>
                     </div>
                   </div>
                   <div className='flex justify-center items-center'>
-                    <div className='flex flex-col gap-2 justify-start items-start'>
+                    <div className='flex flex-col gap-2 justify-start items-center md:items-start'>
                       <p className='text-blue-500 font-semibold'>DATE OF BIRTH</p>
-                      <p className='font-bold text-xl'>17 November 2004</p>
+                      <p className='font-bold text-sm md:text-xl'>17 November 2004</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className='flex flex-row justify-center items-center mb-16'>
-              <div className='flex flex-col justify-center items-center border border-black px-20 py-8 gap-2 w-72'>
+              <div className='flex flex-col justify-center items-center border border-black lg:px-20 py-8 gap-2 w-72'>
                 <p className='text-4xl font-bold'>1+</p>
                 <p className='text-xs font-semibold'>YEARS OF EXPERIENCE</p>
               </div>
-              <div className='flex flex-col justify-center items-center bg-black text-white border border-black px-20 py-8 gap-2 w-72'>
+              <div className='flex flex-col justify-center items-center bg-black text-white border border-black lg:px-20 py-8 gap-2 w-72'>
                 <p className='text-4xl font-bold'>20+</p>
                 <p className='text-xs font-semibold'>PERSONAL PROJECTS</p>
               </div>
-              <div className='flex flex-col justify-center items-center border border-black px-20 py-8 gap-2 w-72'>
+              <div className='flex flex-col justify-center items-center border border-black lg:px-20 py-8 gap-2 w-72'>
                 <p className='text-4xl font-bold'>4+</p>
                 <p className='text-xs font-semibold'>LANGUAGES</p>
               </div>
@@ -329,11 +338,11 @@ const App = () => {
           </div>
         </section>
 
-        <footer id='contact' className="bg-black text-white py-12 mt-16">
+        <footer id='contact' className="bg-black text-white py-6 md:py-12 mt-16">
           <div className="container mx-auto grid grid-cols-3 gap-8 text-center">
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-              <ul className="space-y-2">
+              <h2 className="text-xl md:text-2xl font-semibold mb-4">Contact</h2>
+              <ul className="space-y-2 text-xs md:text-base">
                 <li>Email: <a href="mailto:daniel04.iuga@gmail.com" className="text-blue-400 hover:text-blue-300">daniel04.iuga@gmail.com</a></li>
                 <li>Phone: <a href="tel:+34612345678" className="text-blue-400 hover:text-blue-300">+34 610 590 901</a></li>
                 <li>Location: Barcelona, Spain</li>
@@ -341,8 +350,8 @@ const App = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Quick Links</h2>
-              <ul className="space-y-2">
+              <h2 className="text-xl md:text-2xl font-semibold mb-4">Quick Links</h2>
+              <ul className="space-y-2 text-xs md:text-base">
                 <li><a href="#skills" className="text-blue-400 hover:text-blue-300">Skills</a></li>
                 <li><a href="#about" className="text-blue-400 hover:text-blue-300">About</a></li>
                 <li><a href="#projects" className="text-blue-400 hover:text-blue-300">Projects</a></li>
@@ -351,27 +360,30 @@ const App = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Social Media</h2>
+              <h2 className="text-xl md:text-2xl font-semibold mb-4">Social Media</h2>
               <div className='flex justify-center'>
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-xs md:text-base">
                   <li>
                     <a href="https://www.linkedin.com/in/danieliuga/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 flex items-center">
-                      <div className='flex gap-2'>
-                        <FaLinkedin size={24} /> LinkedIn
+                      <div className='flex flex-row justify-center items-center gap-2'>
+                        <FaLinkedin size={24} title='LinkedIn' />
+                        <p>LinkedIn</p>
                       </div>
                     </a>
                   </li>
                   <li>
                     <a href="https://github.com/danieliuga" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 flex items-center">
-                      <div className='flex gap-2'>
-                        <FaGithub size={24} /> GitHub
+                      <div className='flex flex-row justify-center items-center gap-2'>
+                        <FaGithub size={24} title='GitHub' />
+                        <p>GitHub</p>
                       </div>
                     </a>
                   </li>
                   <li>
                     <a href="https://twitter.com/danieliuga" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 flex items-center">
-                      <div className='flex gap-2'>
-                        <FaTwitter size={24} /> Twitter
+                      <div className='flex flex-row justify-center items-center gap-2'>
+                        <FaTwitter size={24} title='Twitter' />
+                        <p>Twitter</p>
                       </div>
                     </a>
                   </li>
