@@ -19,7 +19,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
         }`}
       >
         {/* Text */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="flex flex-col items-center text-center">
           <div className="flex items-center gap-3 mb-6">
             <span className="block w-7 h-px bg-gold opacity-50" />
             <span className="text-xs font-sans tracking-[3px] uppercase text-gold">
@@ -41,7 +41,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
             Based in Barcelona, I build modern web applications and AI-powered automation systems that solve real-world problems efficiently.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="mt-10 flex flex-wrap gap-4 justify-center">
             <a
               href="/CV Dani Iuga.pdf"
               download
@@ -59,7 +59,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
         </div>
 
         {/* Photo */}
-        <div className="flex justify-center md:justify-end">
+        <div className="flex justify-center">
           <div className="relative">
             <div className="absolute -inset-1 rounded-lg bg-gradient-to-br from-gold/30 to-amber-mid/20 blur-sm" />
             <img
@@ -72,7 +72,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <div className="absolute bottom-8 inset-x-0 mx-auto w-fit flex flex-col items-center gap-2 animate-bounce">
         <span className="text-xs font-sans tracking-widest text-amber-muted uppercase">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-gold/60 to-transparent" />
       </div>

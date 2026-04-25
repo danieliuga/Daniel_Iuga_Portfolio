@@ -25,11 +25,11 @@ export const projects: Project[] = [
     tags: ['React', 'JavaScript', 'CSS'],
   },
   {
-    id: 'loan-amortization',
-    image: '/amortizacion.png',
-    title: 'Loan Amortization Tool',
-    description: 'An application that generates detailed loan amortization schedules, ideal for users looking to better understand their repayment plans.',
-    link: 'https://financial-calculator-rho.vercel.app/',
+    id: 'financial-simulator',
+    image: '/Simulador_Finanzas.png',
+    title: 'Financial Simulator',
+    description: 'An all-in-one financial simulator featuring a mortgage calculator, personal budget manager, and retirement calculator to help users plan their financial future.',
+    link: 'https://financial-simulator-xi.vercel.app/',
     tags: ['React', 'JavaScript'],
   },
 ];

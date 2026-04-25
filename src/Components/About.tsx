@@ -2,7 +2,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from './SectionHeader';
 
 const stats = [
-  { value: '1+',  label: 'Years of Experience' },
+  { value: '2+',  label: 'Years of Experience' },
   { value: '20+', label: 'Personal Projects' },
   { value: '4+',  label: 'Languages Spoken' },
 ];
@@ -28,7 +28,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold/30 to-brown/20 blur-sm" />
               <img
-                src="/foto_Dani2.jpg"
+                src="/imagen_Dani.jpg"
                 alt="Daniel Iuga"
                 loading="lazy"
                 className="relative w-72 md:w-80 rounded-2xl shadow-xl object-cover"
@@ -43,17 +43,30 @@ const About = () => {
                 Daniel <span className="text-brown">*</span> Iuga
               </p>
               <h3 className="font-lora font-bold text-3xl text-navy leading-snug">
-                Junior Frontend Developer
+                Builder of Web Apps & AI Systems
               </h3>
             </div>
 
-            <p className="font-lora font-bold text-xl text-navy/80 leading-snug">
-              Aspiring to create impactful web applications through clean code, responsive design, and a user-centric approach.
-            </p>
+            {/* Why — most prominent */}
+            <div className="border-l-[3px] border-gold pl-4">
+              <p className="font-lora font-bold text-lg text-navy leading-snug">
+                Everything I build starts from a single belief: technology should remove friction from people's lives, not add it. I don't just write code — I challenge how problems get solved.
+              </p>
+            </div>
 
-            <p className="font-sans text-base text-[#666] leading-relaxed">
-              I specialize in front-end development using React and TypeScript, with growing expertise in AI automation and full-stack development. Based in Barcelona, I'm always excited to collaborate on meaningful projects that apply technology to real-world problems.
-            </p>
+            {/* How — medium */}
+            <div className="border-l-[2px] border-brown/50 pl-4">
+              <p className="font-sans text-base text-navy/75 leading-relaxed">
+                I combine clean, scalable frontend development with AI automation systems that actually think. Every project is designed to be fast, intuitive, and smarter than the one before.
+              </p>
+            </div>
+
+            {/* What — least prominent */}
+            <div className="border-l border-cream-border pl-4">
+              <p className="font-sans text-sm text-[#888] leading-relaxed">
+                I build web applications and AI-powered tools. And if that sounds like your next project — let's talk.
+              </p>
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mt-2">
