@@ -1,3 +1,4 @@
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import DarkSectionBg from './DarkSectionBg';
 
@@ -20,10 +21,22 @@ const Hero = ({ onContactClick }: HeroProps) => {
       >
         {/* Text */}
         <div className="flex flex-col items-center text-center">
+          {/* Availability badge */}
+          <div className="flex flex-col items-center gap-1.5 mb-5">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-gold/10 w-fit">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+              </span>
+              <span className="font-sans text-xs text-gold-bright tracking-wide">Open to opportunities · Available now</span>
+            </div>
+            <p className="font-sans text-xs text-amber-muted tracking-wide">Full-time · Remote / Hybrid</p>
+          </div>
+
           <div className="flex items-center gap-3 mb-6">
             <span className="block w-7 h-px bg-gold opacity-50" />
             <span className="text-xs font-sans tracking-[3px] uppercase text-gold">
-              Frontend & AI Developer
+              Fullstack · AI · Business-Minded
             </span>
             <span className="block w-7 h-px bg-gold opacity-50" />
           </div>
@@ -38,10 +51,10 @@ const Hero = ({ onContactClick }: HeroProps) => {
           </p>
 
           <p className="mt-6 font-sans text-base text-amber-text/80 max-w-md leading-relaxed">
-            Based in Barcelona, I build modern web applications and AI-powered automation systems that solve real-world problems efficiently.
+            Based in Barcelona — I build web apps and AI systems with a business background that lets me understand your problems before writing a single line of code.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4 justify-center">
+          <div className="mt-10 flex flex-wrap gap-4 justify-center items-center">
             <a
               href="/CV Dani Iuga.pdf"
               download
@@ -56,6 +69,37 @@ const Hero = ({ onContactClick }: HeroProps) => {
               Message Me
             </button>
           </div>
+
+          {/* Social links + Schedule */}
+          <div className="flex items-center gap-5 mt-5">
+            <a
+              href="https://www.linkedin.com/in/danieliuga/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-amber-text/60 hover:text-gold transition-colors duration-200"
+            >
+              <FaLinkedin size={22} />
+            </a>
+            <a
+              href="https://github.com/danieliuga"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-amber-text/60 hover:text-gold transition-colors duration-200"
+            >
+              <FaGithub size={22} />
+            </a>
+            <span className="w-px h-4 bg-amber-text/20" />
+            <a
+              href="https://cal.com/iuga-0-atqae8/15min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs text-amber-text/60 hover:text-gold transition-colors duration-200"
+            >
+              Schedule a 15-min call →
+            </a>
+          </div>
         </div>
 
         {/* Photo */}
@@ -65,6 +109,8 @@ const Hero = ({ onContactClick }: HeroProps) => {
             <img
               src="/imagen_Dani.jpg"
               alt="Daniel Iuga"
+              width="400"
+              height="500"
               className="relative w-72 md:w-80 lg:w-96 rounded-lg shadow-2xl object-cover"
             />
           </div>
@@ -72,7 +118,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 inset-x-0 mx-auto w-fit flex flex-col items-center gap-2 animate-bounce">
+      <div aria-hidden="true" className="absolute bottom-8 inset-x-0 mx-auto w-fit flex flex-col items-center gap-2 animate-bounce">
         <span className="text-xs font-sans tracking-widest text-amber-muted uppercase">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-gold/60 to-transparent" />
       </div>

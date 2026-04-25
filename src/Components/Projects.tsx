@@ -1,3 +1,4 @@
+import { FaGithub } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from './SectionHeader';
 import Project from './Project';
@@ -27,6 +28,17 @@ const Projects = () => {
               visible={visible}
             />
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href="https://github.com/danieliuga"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-brown hover:text-gold transition-colors duration-200"
+          >
+            <FaGithub size={16} />
+            View all projects on GitHub →
+          </a>
         </div>
       </div>
     </section>

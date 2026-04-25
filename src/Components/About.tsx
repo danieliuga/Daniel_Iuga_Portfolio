@@ -3,7 +3,7 @@ import SectionHeader from './SectionHeader';
 
 const stats = [
   { value: '2+',  label: 'Years of Experience' },
-  { value: '20+', label: 'Personal Projects' },
+  { value: '10+', label: 'Personal Projects' },
   { value: '4+',  label: 'Languages Spoken' },
 ];
 
@@ -31,6 +31,8 @@ const About = () => {
                 src="/imagen_Dani.jpg"
                 alt="Daniel Iuga"
                 loading="lazy"
+                width="400"
+                height="500"
                 className="relative w-72 md:w-80 rounded-2xl shadow-xl object-cover"
               />
             </div>
@@ -43,7 +45,7 @@ const About = () => {
                 Daniel <span className="text-brown">*</span> Iuga
               </p>
               <h3 className="font-lora font-bold text-3xl text-navy leading-snug">
-                Builder of Web Apps & AI Systems
+                The Dev Who Speaks Both Code and Business
               </h3>
             </div>
 
@@ -84,12 +86,19 @@ const About = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 mt-2">
-              <span className="text-sm font-sans text-[#666]">
-                📍 Barcelona, Spain
-              </span>
-              <span className="text-sm font-sans text-[#666]">
-                🎂 17 November 2004
-              </span>
+              <span className="text-sm font-sans text-[#666]">📍 Barcelona, Spain</span>
+              <span className="text-sm font-sans text-[#666]">🎂 17 November 2004</span>
+              <span className="text-sm font-sans text-[#666]">📚 Studying Computer Engineering</span>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-1">
+              {['Spanish', 'Catalan', 'English', 'Romanian'].map((lang) => (
+                <span
+                  key={lang}
+                  className="px-2.5 py-0.5 rounded-full border border-cream-border bg-white text-xs font-sans text-navy/70"
+                >
+                  {lang}
+                </span>
+              ))}
             </div>
           </div>
         </div>

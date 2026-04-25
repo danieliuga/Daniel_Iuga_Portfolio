@@ -14,8 +14,13 @@ const Footer = () => (
             </a>
           </li>
           <li>
-            <a href="tel:+34610590901" className="hover:text-gold transition-colors">
-              +34 610 590 901
+            <a
+              href="https://cal.com/iuga-0-atqae8/15min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors"
+            >
+              Schedule a call →
             </a>
           </li>
           <li>Barcelona, Spain</li>

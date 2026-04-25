@@ -39,9 +39,9 @@ const Services = () => {
     <section id="services" className="bg-cream py-20 px-6">
       <div ref={ref} className="container mx-auto">
         <SectionHeader
-          eyebrow="What I do"
-          title="Services"
-          subtitle="How I can help you"
+          eyebrow="Value Proposition"
+          title="What I Bring"
+          subtitle="Beyond the tech stack"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, i) => (

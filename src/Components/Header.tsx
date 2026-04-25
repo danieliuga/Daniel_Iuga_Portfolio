@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 
 const navLinks = [
-  { href: '#skills',    label: 'Skills' },
-  { href: '#services',  label: 'Services' },
-  { href: '#projects',  label: 'Projects' },
   { href: '#about',     label: 'About' },
+  { href: '#skills',    label: 'Skills' },
+  { href: '#projects',  label: 'Projects' },
+  { href: '#education', label: 'Education' },
+  { href: '#services',  label: 'What I Bring' },
   { href: '#contact',   label: 'Contact' },
 ];
 
@@ -49,7 +50,9 @@ const Header = () => {
 
         {/* CTA */}
         <a
-          href="mailto:daniel04.iuga@gmail.com"
+          href="https://cal.com/iuga-0-atqae8/15min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:inline-flex items-center px-5 py-2 border border-gold text-gold font-sans text-sm font-semibold hover:bg-gold hover:text-amber-dark transition-all duration-200"
         >
           Let's talk
@@ -79,7 +82,9 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="mailto:daniel04.iuga@gmail.com"
+            href="https://cal.com/iuga-0-atqae8/15min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2 inline-flex justify-center px-5 py-2 border border-gold text-gold font-sans text-sm font-semibold hover:bg-gold hover:text-amber-dark transition-all duration-200"
           >
             Let's talk

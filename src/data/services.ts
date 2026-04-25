@@ -1,4 +1,4 @@
-import { TbBrain, TbStack2, TbPalette } from 'react-icons/tb';
+import { TbBrain, TbStack2, TbWorld } from 'react-icons/tb';
 import type { ComponentType } from 'react';
 
 export interface Service {
@@ -10,21 +10,21 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: 'ai-automation',
+    id: 'business-engineering',
     icon: TbBrain,
-    title: 'AI & Automatizaciones',
-    description: 'Integración de LLMs, agentes de IA y flujos de automatización con N8N y APIs de Anthropic para optimizar procesos repetitivos.',
+    title: 'Business-First Engineering',
+    description: 'I understand your problem before writing a single line of code. My background in digital business and innovation means I bridge tech and strategy — rare in a developer.',
   },
   {
-    id: 'fullstack',
+    id: 'fullstack-execution',
     icon: TbStack2,
-    title: 'FullStack Development',
-    description: 'Desarrollo de aplicaciones web completas con React en frontend y SQL en backend, enfocadas en rendimiento y experiencia de usuario.',
+    title: 'Full-Stack Execution',
+    description: 'React, TypeScript and AI automation from prototype to production. Clean, maintainable code focused on performance, scalability and long-term developer experience.',
   },
   {
-    id: 'ui-ux',
-    icon: TbPalette,
-    title: 'UI/UX Design',
-    description: 'Diseño de interfaces intuitivas y atractivas en Figma, orientadas a la usabilidad y estética visual del producto final.',
+    id: 'communication',
+    icon: TbWorld,
+    title: 'Communication Across Boundaries',
+    description: 'Fluent in 4 languages with formal training in international business. I work effectively across technical and non-technical stakeholders, cultures and seniority levels.',
   },
 ];

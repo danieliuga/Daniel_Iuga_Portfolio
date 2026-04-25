@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Header from './Components/Header';
 import Hero from './Components/Hero';
-import Skills from './Components/Skills';
-import Services from './Components/Services';
-import Projects from './Components/Projects';
 import About from './Components/About';
+import Skills from './Components/Skills';
+import Projects from './Components/Projects';
+import Education from './Components/Education';
+import AiAssistant from './Components/AiAssistant';
+import Services from './Components/Services';
 import ContactModal from './Components/ContactModal';
 import Footer from './Components/Footer';
 
@@ -16,10 +18,12 @@ const App = () => {
       <Header />
       <main>
         <Hero onContactClick={() => setShowModal(true)} />
-        <Skills />
-        <Services />
-        <Projects />
         <About />
+        <Skills />
+        <Projects />
+        <AiAssistant />
+        <Education />
+        <Services />
       </main>
       <Footer />
       {showModal && <ContactModal onClose={() => setShowModal(false)} />}

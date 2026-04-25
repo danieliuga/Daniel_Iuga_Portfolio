@@ -42,6 +42,7 @@ const Project = ({ image, title, description, link, tags, index, visible }: Proj
         href={link}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`View ${title} project`}
         className="mt-2 inline-flex items-center gap-2 text-sm font-sans font-semibold text-brown hover:text-gold transition-colors duration-200"
       >
         View project →
