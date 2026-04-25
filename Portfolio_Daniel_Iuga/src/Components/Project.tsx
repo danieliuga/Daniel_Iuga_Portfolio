@@ -1,32 +1,53 @@
-
-interface ProjectType {
-    image: string;
-    title: string;
-    description: string;
-    link: string;
+interface ProjectProps {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+  tags: string[];
+  index: number;
+  visible: boolean;
 }
 
-const Project = ({ image, title, description, link }: ProjectType) => (
-    <div className='grid grid-rows-2 md:grid-rows-1 md:grid-cols-[1fr_1fr] justify-center items-center mt-10'>
-      <div className='flex justify-center md:justify-end'>
-        <div className='w-2/3 md:mr-10'>
-          <img src={image} alt={title} className="rounded-lg shadow-lg" />
-        </div>
-      </div>
-      <div className='flex flex-col justify-center md:justify-start items-center md:items-start md:ml-5'>
-        <div className='bg-blue-500 text-white font-semibold py-2 w-40'>PROJECT</div>
-        <p className='py-2 mt-2 text-2xl font-bold'>{title}</p>
-        <p className='py-2 flex text-center md:text-left'>{description}</p>
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className='border mt-2 px-4 py-2 border-black font-semibold bg-white text-blue-600'
-        >
-          See More
-        </a>
-      </div>
+const Project = ({ image, title, description, link, tags, index, visible }: ProjectProps) => (
+  <div
+    className="bg-white rounded-2xl border border-cream-border overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-gold transition-all duration-300 flex flex-col"
+    style={{
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateY(0)' : 'translateY(24px)',
+      transition: `opacity 0.5s ease-out ${index * 120}ms, transform 0.5s ease-out ${index * 120}ms, box-shadow 0.3s, border-color 0.3s`,
+    }}
+  >
+    <div className="overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+      />
     </div>
-  );
+    <div className="flex flex-col gap-3 p-6 flex-1">
+      <div className="flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs font-sans font-semibold px-2 py-1 rounded bg-gold/15 text-brown border border-gold/30"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h3 className="font-lora font-bold text-xl text-navy">{title}</h3>
+      <p className="font-sans text-sm text-[#666] leading-relaxed flex-1">{description}</p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 inline-flex items-center gap-2 text-sm font-sans font-semibold text-brown hover:text-gold transition-colors duration-200"
+      >
+        View project →
+      </a>
+    </div>
+  </div>
+);
 
-export default Project
+export default Project;
