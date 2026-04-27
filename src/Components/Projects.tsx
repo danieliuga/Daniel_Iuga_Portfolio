@@ -3,16 +3,14 @@ import { FaGithub } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionHeader from './SectionHeader';
 import Project from './Project';
+import ProjectsModal from './ProjectsModal';
 import { projects } from '../data/projects';
 
-const INITIAL_COUNT = 3;
+const FEATURED_COUNT = 3;
 
 const Projects = () => {
   const { ref, visible } = useScrollAnimation();
-  const [showAll, setShowAll] = useState(false);
-
-  const displayed = showAll ? projects : projects.slice(0, INITIAL_COUNT);
-  const remaining = projects.length - INITIAL_COUNT;
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <section id="projects" className="bg-cream py-20 px-6">
@@ -23,7 +21,7 @@ const Projects = () => {
           subtitle="Practical applications & learning"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayed.map((project, i) => (
+          {projects.slice(0, FEATURED_COUNT).map((project, i) => (
             <Project
               key={project.id}
               image={project.image}
@@ -38,14 +36,12 @@ const Projects = () => {
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-4">
-          {!showAll && remaining > 0 && (
-            <button
-              onClick={() => setShowAll(true)}
-              className="inline-flex items-center gap-2 px-7 py-3 border border-navy/20 text-navy font-sans text-sm font-semibold hover:border-gold hover:text-brown transition-all duration-200"
-            >
-              Show {remaining} more project{remaining > 1 ? 's' : ''} ↓
-            </button>
-          )}
+          <button
+            onClick={() => setShowModal(true)}
+            className="inline-flex items-center gap-2 px-7 py-3 border border-navy/20 text-navy font-sans text-sm font-semibold hover:border-gold hover:text-brown transition-all duration-200"
+          >
+            View all {projects.length} projects ↗
+          </button>
           <a
             href="https://github.com/danieliuga"
             target="_blank"
@@ -57,6 +53,8 @@ const Projects = () => {
           </a>
         </div>
       </div>
+
+      {showModal && <ProjectsModal onClose={() => setShowModal(false)} />}
     </section>
   );
 };
