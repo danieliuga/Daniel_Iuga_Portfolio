@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SplashScreen from './Components/SplashScreen';
 import Header from './Components/Header';
 import Hero from './Components/Hero';
 import About from './Components/About';
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <>
+      <SplashScreen />
       <Header />
       <main>
         <Hero onContactClick={() => setShowModal(true)} />

@@ -29,9 +29,31 @@ export default {
           '0%':   { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        logoDrop: {
+          '0%':   { opacity: '0', transform: 'translateY(-100px)' },
+          '60%':  { opacity: '1', transform: 'translateY(8px)' },
+          '80%':  { opacity: '1', transform: 'translateY(-4px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        rowSlide: {
+          '0%':   { transform: 'translateX(44px)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        letterReveal: {
+          '0%':   { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        overlayFade: {
+          '0%':   { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
       },
       animation: {
-        'fade-up': 'fadeUp 0.5s ease-out forwards',
+        'fade-up':      'fadeUp 0.5s ease-out forwards',
+        'logo-drop':    'logoDrop 0.6s ease-out forwards',
+        'row-slide':    'rowSlide 0.7s ease-out forwards',
+        'letter-reveal':'letterReveal 0.25s ease-out forwards',
+        'overlay-fade': 'overlayFade 0.6s ease-in forwards',
       },
     },
   },
